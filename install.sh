@@ -11,10 +11,10 @@ set -e
 yum update -y && yum install -y epel-release
 yum install -y git gcc gcc-c++ make automake autoconf bison perl file tar re2c libtool wget bzip2 mlocate which
 
-cd ${BUILD_ASSETS_DIR}
-download_and_extract https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}.tar.gz cmake && (cd cmake && ./configure && gmake && make install)
+wget https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}-Linux-x86_64.sh
+bash cmake-${CMAKE_VERSION}-Linux-x86_64.sh --skip-license --prefix=/usr && rm -f cmake-${CMAKE_VERSION}-Linux-x86_64.sh
 
-cd ~ && rm -rf ${BUILD_ASSETS_DIR} && mkdir -p ${BUILD_PREFIX_DIR}
+mkdir -p ${BUILD_PREFIX_DIR}
 echo ${BUILD_PREFIX_DIR}/lib/ > /etc/ld.so.conf.d/custom-libs.conf
 echo ${BUILD_PREFIX_DIR}/lib64/ >> /etc/ld.so.conf.d/custom-libs.conf
 
