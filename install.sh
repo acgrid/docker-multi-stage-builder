@@ -16,6 +16,7 @@ download_and_extract https://github.com/Kitware/CMake/releases/download/v${CMAKE
 
 cd ~ && rm -rf ${BUILD_ASSETS_DIR} && mkdir -p ${BUILD_PREFIX_DIR}
 echo ${BUILD_PREFIX_DIR}/lib/ > /etc/ld.so.conf.d/custom-libs.conf
+echo ${BUILD_PREFIX_DIR}/lib64/ >> /etc/ld.so.conf.d/custom-libs.conf
 
 set +e
 strip_debug /usr/bin/ "*"
