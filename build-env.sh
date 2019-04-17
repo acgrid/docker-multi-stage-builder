@@ -4,7 +4,6 @@ BUILD_ASSETS_DIR=${BUILD_ASSETS_DIR}
 export BUILD_ROOT_DIR="${BUILD_ASSETS_DIR}/rootfs"
 export BUILD_PREFIX_DIR="${BUILD_ROOT_DIR}/usr"
 
-export PATH="${BUILD_PREFIX_DIR}/bin:$PATH"
 export PKG_CONFIG_PATH="${BUILD_PREFIX_DIR}/lib/pkgconfig:${BUILD_PREFIX_DIR}/lib64/pkgconfig:/usr/lib64/pkgconfig:/usr/share/pkgconfig"
 export LD_LIBRARY_PATH="/lib:/usr/lib:/usr/lib64:/usr/local/lib:${BUILD_PREFIX_DIR}/lib"
 export CPPFLAGS="-I${BUILD_PREFIX_DIR}/include"
